@@ -57,3 +57,14 @@ def reset_password(username):
     except ValueError as e:
         print(e)
 
+def authorize_access(access_level, resource):
+    # define access control rules based on access levels and resources.
+    if access_level == "admin" and resource in ["secret_data", "admin_dashboard"]:
+        return True
+    elif access_level == "user" and resource in ["public_data", "user_dashboard"]:
+        return True
+    else:
+        return False
+    
+    
+
